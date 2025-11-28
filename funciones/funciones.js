@@ -1,10 +1,8 @@
 const formulario = document.getElementById('formulario');
 
-    formulario.addEventListener('submit', function(e) {
-    e.preventDefault();
+formulario.addEventListener('submit', function(e) {
 
     // Obtener valores
-
     const nombre = document.getElementById('nombre').value.trim();
     const apellido = document.getElementById('apellido').value.trim();
     const tipoDoc = document.getElementById('tipoDoc').value;
@@ -13,73 +11,45 @@ const formulario = document.getElementById('formulario');
     const division = document.getElementById('division').value;
     const email = document.getElementById('email').value.trim();
 
-    if (!nombre || !apellido || !tipoDoc || !numDoc || !anio || !division || !email) {
-    alert("Por favor completá todos los campos.");
-    return;
-        }
-
     // Validaciones
     const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/;
     const soloNumeros = /^[0-9]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // Campos vacíos
+    if (!nombre || !apellido || !tipoDoc || !numDoc || !anio || !division || !email) {
+        e.preventDefault();
+        alert("Por favor completá todos los campos.");
+        return;
+    }
+
+    // Nombre letras
     if (!soloLetras.test(nombre)) {
+        e.preventDefault();
         alert("El nombre solo puede contener letras.");
-            return;
-        }
+        return;
+    }
 
+    // Apellido letras
     if (!soloLetras.test(apellido)) {
+        e.preventDefault();
         alert("El apellido solo puede contener letras.");
-            return;
-        }
+        return;
+    }
 
+    // Número documento
     if (!soloNumeros.test(numDoc)) {
+        e.preventDefault();
         alert("El número de documento debe ser numérico.");
-            return;
-        }
+        return;
+    }
 
+    // Email válido
     if (!emailRegex.test(email)) {
+        e.preventDefault();
         alert("La dirección de mail no es válida.");
-            return;
-        }
+        return;
+    }
 
-        const usuario = {
-            nombre,
-            apellido,
-            tipoDoc,
-            numDoc,
-            anio,
-            division,
-            email
-        };
-
-    console.log("Usuario a registrar:", usuario);
-
-    fetch("/registrar", {
-
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(usuario)
-
-    })
-
-    .then(res => {
-
-        if (!res.ok) throw new Error("Error en el servidor");
-        return res.json();
-
-    })
-    .then(data => {
-
-        alert("Usuario registrado con éxito.");
-        formulario.reset();
-
-    })
-    .catch(err => {
-
-        console.error(err);
-        alert("Error al registrar.");
-    });
-
+    // SI LLEGA HASTA AQUÍ → SE ENVÍA A guardar.php
 });
-

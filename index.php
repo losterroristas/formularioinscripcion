@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de inscripción</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhb3Ngz0X-kkrFUkWPDUs4obKCjDOpqT9nrtKwjkXiPJetcMDRNAVOuEJSYNPQM6e7Igu5z6skdTvodKdu14xZmcOM0roAqEheZREKthkDnTGyJnzBwAjdefqpNWrPER9W4vB0rXm76OkexHqQiSMXzSVFzHFBJBj_ZbQdLCcM155ma2d6T5_Koy0ybEX4/w161-h192/LOGO%20CHACA.png">
+    <div class="form-container">
+        <h2>Formulario de inscripción</h2>
+        <form id="formulario" action="guardar.php" method="POST">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" maxlength="20" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" maxlength="20" required>
+
+            <label for="tipoDoc">Tipo de documento:</label>
+            <select id="tipoDoc" name="tipoDoc" required>
+                <option value="">Seleccionar</option>
+                <option value="DNI">DNI</option>
+                <option value="LC">LC</option>
+                <option value="LE">LE</option>
+            </select>
+
+            <label for="numDoc">Número de documento:</label>
+            <input type="text" id="numDoc" name="numDoc" maxlength="10" required>
+
+            <label for="anio">Año:</label>
+            <select id="anio" name="anio" required>
+                <option value="">Seleccionar</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+
+            <label for="division">División:</label>
+            <select id="division" name="division" required>
+                <option value="">Seleccionar</option>
+                <option value="1o">1º</option>
+                <option value="2o">2º</option>
+                <option value="3o">3º</option>
+                <option value="4o">4º</option>
+                <option value="5o">5º</option>
+                <option value="6o">6º</option>
+            </select>
+
+            <label for="email">Dirección de mail:</label>
+            <input type="text" id="email" name="email" maxlength="100" required>
+
+            <br>
+            <button type="submit" class="registrar">Registrar</button>
+            <button type="reset" class="resetear">Borrar datos</button>
+
+        </form>
+        
+    </div>
+    <div>
+        <a href="listado.php">ver listado</a>
+    </div>
+    <script src="funciones/funciones.js"></script>
+</body>
+</html>

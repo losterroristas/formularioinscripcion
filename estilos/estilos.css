@@ -1,52 +1,68 @@
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #3184e9;
-        }
+.tabla-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #333;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
 
-        h2{
-            background-color: #e12727;
-            border-radius: 5px;
+.titulo-listado {
+    text-align: center;
+    background-color: #e12727;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 
-        }
+/* Botón volver */
+.btn-volver {
+    display: inline-block;
+    background-color: #3184e9;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 
-        .form-container {
-            width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            border: 2px solid #333;
-            border-radius: 8px;
-            text-align: center;
-        }
+.btn-volver:hover {
+    background-color: #1f63b3;
+}
 
-        .form-container label {
-            display: block;
-            margin-top: 15px;
-            text-align: left;
-        }
+/* ===== TABLA ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
 
-        .form-container input[type="text"],
-        .form-container select {
-            width: 100%;
-            padding: 6px;
-            margin-top: 5px;
-        }
+thead {
+    background-color: #3184e9;
+    color: white;
+}
 
-        .form-container button {
-            margin-top: 20px;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
 
-        .registrar {
-            background-color: #4CAF50;
-            color: white;
-        }
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-        .resetear {
-            background-color: #f44336;
-            color: white;
-            margin-left: 10px;
-        }
+tbody tr:hover {
+    background-color: #ffe8e8;
+}
+
+td[colspan="8"] {
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+}
